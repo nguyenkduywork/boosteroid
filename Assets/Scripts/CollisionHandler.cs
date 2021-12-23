@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] private float waitTime = 1f;
     private void OnCollisionEnter(Collision other)
     {
         switch (other.gameObject.tag)
@@ -11,10 +12,10 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("Fuel picked up");
                 break;
             case "Finish":
-                NextLevel();
+                NextLevelSequence();
                 break;
             case "Obstacle":
-                ReloadLevel();
+                CrashSequence();
                 break;
             default:
                 Debug.Log("This thing you touched isn't dangerous");
@@ -22,6 +23,12 @@ public class CollisionHandler : MonoBehaviour
         }
     }
 
+    void CrashSequence()
+    {
+        //TODO add SFX when crashed, particle effect too
+        GetComponent<Movement>().enabled = false;
+        Invoke("ReloadLevel", waitTime);
+    }
     void ReloadLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -37,5 +44,10 @@ public class CollisionHandler : MonoBehaviour
             nextSceneIndex = 0;
         }
         SceneManager.LoadScene(nextSceneIndex);
+    }
+    void NextLevelSequence()
+    {
+        GetComponent<Movement>().enabled = false;
+        Invoke("NextLevel",waitTime);
     }
 }
