@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 1078850446}
   m_Layer: 0
   m_Name: Obstacles
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -738,13 +738,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
-    - target: {fileID: 460282841905404114, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.31
+    - target: {fileID: 574618769125882203, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
+      propertyPath: m_Pitch
+      value: 0.53
       objectReference: {fileID: 0}
-    - target: {fileID: 2165054137710164456, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.78
+    - target: {fileID: 574618769125882203, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
+      propertyPath: Priority
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 574618769125882203, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
+      propertyPath: MaxDistance
+      value: 496.59717
+      objectReference: {fileID: 0}
+    - target: {fileID: 574618769125882203, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6417689675611792392, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
       propertyPath: m_RootOrder
@@ -789,18 +797,6 @@ PrefabInstance:
     - target: {fileID: 6417689675611792392, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6848804571436492336, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 8602977793564262111, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 8602977793564262111, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.305
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}

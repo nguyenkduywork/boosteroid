@@ -289,6 +289,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 574618769125882203, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
+      propertyPath: m_Pitch
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 574618769125882203, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
+      propertyPath: m_Volume
+      value: 0.211
+      objectReference: {fileID: 0}
     - target: {fileID: 6417689675611792392, guid: 3cda6b0f5771bf24884613d49ec4cb4c, type: 3}
       propertyPath: m_RootOrder
       value: 4
