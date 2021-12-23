@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)
@@ -14,11 +14,17 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("Finished!");
                 break;
             case "Obstacle":
-                Debug.Log("You touched an obstacle!!");
+                ReloadLevel();
                 break;
             default:
                 Debug.Log("This thing you touched isn't dangerous");
                 break;
         }
+    }
+
+    void ReloadLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }
