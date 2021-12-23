@@ -6,6 +6,7 @@ TagManager:
   tags:
   - launch
   - Obstacle
+  - Fuel
   layers:
   - Default
   - TransparentFX
