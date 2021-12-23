@@ -6,6 +6,7 @@ using UnityEngine.PlayerLoop;
 public class Movement : MonoBehaviour
 {
     private Rigidbody rb;
+    private AudioSource audioSource;
 
     [SerializeField] float ThrustPower = 2000;
     [SerializeField] float RotatePower = 100;
@@ -13,6 +14,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,7 +29,9 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rb.AddRelativeForce(Vector3.up * ThrustPower * Time.deltaTime);
+            if (!audioSource.isPlaying) audioSource.Play();
         }
+        else {  audioSource.Stop();}
     }
 
     void ProcessRotation()
