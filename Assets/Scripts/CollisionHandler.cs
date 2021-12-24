@@ -7,6 +7,9 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip explode;
     [SerializeField] AudioClip finish;
     
+    [SerializeField] ParticleSystem explosionParticles; 
+    [SerializeField] ParticleSystem finishParticles;
+    
     private AudioSource audioSource;
     //Variable whether or not our object is in a middle of an action/a method
     private bool isTransitioning = false;
@@ -38,6 +41,7 @@ public class CollisionHandler : MonoBehaviour
     {
         //object is doing CrashSequence()
         isTransitioning = true;
+        explosionParticles.Play();
         audioSource.Stop();
         audioSource.PlayOneShot(explode);
         isTransitioning = true;
@@ -64,6 +68,7 @@ public class CollisionHandler : MonoBehaviour
     {
         //object is doing NextLevelSequence()
         isTransitioning = true;
+        finishParticles.Play();
         audioSource.Stop();
         audioSource.PlayOneShot(finish);
         GetComponent<Movement>().enabled = false;
