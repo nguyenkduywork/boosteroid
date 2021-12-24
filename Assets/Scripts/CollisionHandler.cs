@@ -12,17 +12,41 @@ public class CollisionHandler : MonoBehaviour
     
     private AudioSource audioSource;
     //Variable whether or not our object is in a middle of an action/a method
-    private bool isTransitioning = false;
+    private bool isTransitioning;
+    private bool collisionDisabled = false;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        RespondToDebugKeys();
+    }
+
+    void RespondToDebugKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            NextLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.O) && !collisionDisabled)
+        {
+            collisionDisabled = true; //Toggle collision
+            print("You have disabled collision effects");
+        }
+        else if (Input.GetKeyDown(KeyCode.P) && collisionDisabled)
+        {
+            collisionDisabled = false; //Toggle collision
+            print("You have enabled collision effects");
+        }
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         //if we have been crashed/ have reached the landing pad, stop processing collisions
-        if (isTransitioning) { return; }
+        if (isTransitioning || collisionDisabled) { return; }
         switch (other.gameObject.tag)
         {
             case "Finish":
