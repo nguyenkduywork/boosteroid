@@ -8,6 +8,8 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip finish;
     
     private AudioSource audioSource;
+    //Variable whether or not our object is in a middle of an action/a method
+    private bool isTransitioning = false;
 
     private void Start()
     {
@@ -16,11 +18,10 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        //if we have been crashed/ have reached the landing pad, stop processing collisions
+        if (isTransitioning) { return; }
         switch (other.gameObject.tag)
         {
-            case "Fuel":
-                Debug.Log("Fuel picked up");
-                break;
             case "Finish":
                 NextLevelSequence();
                 break;
@@ -35,8 +36,11 @@ public class CollisionHandler : MonoBehaviour
 
     void CrashSequence()
     {
-        
+        //object is doing CrashSequence()
+        isTransitioning = true;
+        audioSource.Stop();
         audioSource.PlayOneShot(explode);
+        isTransitioning = true;
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadLevel", waitTime);
     }
@@ -58,6 +62,9 @@ public class CollisionHandler : MonoBehaviour
     }
     void NextLevelSequence()
     {
+        //object is doing NextLevelSequence()
+        isTransitioning = true;
+        audioSource.Stop();
         audioSource.PlayOneShot(finish);
         GetComponent<Movement>().enabled = false;
         Invoke("NextLevel",waitTime);

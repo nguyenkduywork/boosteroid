@@ -6,7 +6,7 @@ TagManager:
   tags:
   - launch
   - Obstacle
-  - Fuel
+  - landing
   layers:
   - Default
   - TransparentFX
