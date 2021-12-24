@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 178906787272068032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22, y: 6.5, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 0.75, y: 3.75, z: 0.75}
   m_Children:
   - {fileID: 2165054137710164456}
   - {fileID: 8602977793564262111}
@@ -223,9 +223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThrustPower: 1500
-  RotatePower: 75
+  RotatePower: 70
   mainEngine: {fileID: 8300000, guid: 8724724947df9174a81cf326e36668af, type: 3}
-  sideThrusters: {fileID: 8300000, guid: c0f7e44ba6095f745824be57fc0fbd13, type: 3}
   mainEngineParticles: {fileID: 4375324075964731188}
   LeftEngineParticles: {fileID: 3800334182842170854}
   RightEngineParticles: {fileID: 4187057934945450169}
@@ -1287,7 +1286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 0.39
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739, type: 3}
       propertyPath: ShapeModule.radiusThickness
