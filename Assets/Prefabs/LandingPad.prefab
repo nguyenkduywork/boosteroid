@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7935504370573038865}
   - component: {fileID: 9050099655522696407}
   m_Layer: 0
-  m_Name: Fence1 (1)
-  m_TagString: Untagged
+  m_Name: Fence2
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 4949335549151843562}
   m_Layer: 0
   m_Name: LaunchPadBottom
-  m_TagString: launch
+  m_TagString: landing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 2400262439653461306}
   m_Layer: 0
   m_Name: LandingPad
-  m_TagString: launch
+  m_TagString: landing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 8820398999800509241}
   m_Layer: 0
   m_Name: LaunchPadTop
-  m_TagString: launch
+  m_TagString: landing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 6859571827236944442}
   m_Layer: 0
   m_Name: Fence1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
