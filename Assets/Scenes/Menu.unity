@@ -1228,7 +1228,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -470.6}
-  m_SizeDelta: {x: 1221.05, y: 597}
+  m_SizeDelta: {x: 1221.05, y: 685.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1382487763
 MonoBehaviour:
@@ -1264,10 +1264,12 @@ MonoBehaviour:
     Hold Space to activate main engine
 
     Press
-    O to disable collision effects (Not advised)
+    L to go to next level
 
-    Press P to reenable collision
-    effects
+    Press O to disable collision effects (Not advised)
+
+    Press
+    P to reenable collision effects
 
 
     Now go! And please, don''t crash :)'
