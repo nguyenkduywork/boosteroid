@@ -6,6 +6,7 @@ TagManager:
   tags:
   - launch
   - Obstacle
+  - landing
   layers:
   - Default
   - TransparentFX
