@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.PlayerLoop;
 
 public class Movement : MonoBehaviour
 {
@@ -23,6 +19,9 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
     }
+    
+    //Calling movement methods in FixedUpdate() helps prevent stuttering when moving at a
+    //slightly faster speed
     void FixedUpdate()
     {
         ProcessThrust();
@@ -41,7 +40,8 @@ public class Movement : MonoBehaviour
             mainEngineParticles.Stop();
         }
     }
-
+    
+    //Add force to the rocket main engine, also turn on audio for the engine and engine particles
     private void StartThrusting()
     {
         rb.AddRelativeForce(Vector3.up * ThrustPower * Time.deltaTime);
@@ -66,12 +66,14 @@ public class Movement : MonoBehaviour
         }
     }
 
+    //Add force to the rocket left engine, also turn on engine particles
     private void StartLeftEngine()
     {
         ApplyRotation(-RotatePower);
         if (!LeftEngineParticles.isPlaying) LeftEngineParticles.Play();
     }
 
+    //Add force to the rocket right engine, also turn on engine particles
     private void StartRightEngine()
     {
         ApplyRotation(RotatePower);
@@ -80,7 +82,8 @@ public class Movement : MonoBehaviour
 
     void ApplyRotation(float rotationThisFrame)
     {
-        rb.freezeRotation = true; //freezing rotation so we can manually rotate
+        //freezing rotation so we can manually rotate, prevent normal physic rotation to improve maneuverability
+        rb.freezeRotation = true; 
         transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
         rb.freezeRotation = false;
     }
