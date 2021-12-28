@@ -581,6 +581,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
     1: GRIFFIN;GRIFFIN_2021;TEXTURE_GRAPH;POSEIDON;JUPITER;TG_SEARCHER
+    13: GRIFFIN;POSEIDON;JUPITER;GRIFFIN_2021;TEXTURE_GRAPH;TG_SEARCHER
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
