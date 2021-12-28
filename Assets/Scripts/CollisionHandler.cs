@@ -41,6 +41,10 @@ public class CollisionHandler : MonoBehaviour
             collisionDisabled = false; //Toggle collision
             print("You have enabled collision effects");
         }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     private void OnCollisionEnter(Collision other)
